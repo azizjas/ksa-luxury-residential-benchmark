@@ -14,7 +14,7 @@ This is a standalone competitive-intelligence report on luxury residential adver
 
 ## Brand Personality
 
-Confident, restrained, editorial. Not corporate-bland, not startup-loud, not casual. Closer to Wallpaper, FT Weekend's Long Read, or a Tumi catalog than to a SaaS dashboard. Voice is plain English with deliberate cadence: no hype, no jargon, no exclamation points. Numbers are quoted clean; the design carries the weight that adjectives would otherwise have to. Heritage-aware without being heritage-themed: Najdi geometry shows up once as a divider, not as wallpaper.
+Confident, restrained, editorial. Not corporate-bland, not startup-loud, not casual. Closer to a Bloomberg terminal page typeset by Wallpaper than to a SaaS dashboard. **Metrics first; prose is exception, not rule.** Voice is plain English in clipped facts — no hype, no jargon, no exclamation points, no narrative paragraphs. Numbers are quoted clean and dense; the design carries the weight that adjectives would otherwise have to. Heritage-aware without being heritage-themed: Najdi geometry shows up once as a divider, not as wallpaper.
 
 ## Anti-references
 
@@ -29,10 +29,10 @@ Confident, restrained, editorial. Not corporate-bland, not startup-loud, not cas
 
 ## Design Principles
 
-1. **The data is the work.** Design carries the data; design is not the work. Every piece of typography, spacing, and color choice exists to make the numbers and creatives more legible, not to compete with them.
-2. **Honesty over flattery.** Diriyah's own Meta output is six creatives with four paused for disclaimer issues. The report names that. Restraint reads as confidence; spin reads as defensiveness. Frame the gap as a strategic opportunity, not a problem to hide.
-3. **Editorial pacing.** Long-form reading rhythm: drop-cap section openers, generous breathing room, eyebrows that orient, real paragraphs. The reader should feel they are reading something, not scanning a dashboard.
-4. **Specificity over abstraction.** Real ad creatives at decent size, real numbers in tabular form, real Meta library IDs as deep links. No abstract data-viz illustrations of "trends".
+1. **The data is the work.** Design carries the data; design is not the work. Every piece of typography, spacing, and color choice exists to make the numbers more legible, not to compete with them.
+2. **Metrics first; prose is exception, not rule.** Stat grids before sentences. Bullets max 12 words. The hero gets one short eyebrow paragraph; everything else is numbers, bullets, and a designed comparison matrix.
+3. **Honesty over flattery.** v2 mis-attributed thousands of ads through keyword leaks. v3 names every revalidated count and shows the delta. Restraint reads as confidence; over-claiming reads as defensiveness.
+4. **Specificity over abstraction.** Real banner counts, captured page IDs, real ad creatives at decent size, real Meta library IDs as deep links. No abstract data-viz illustrations of "trends".
 5. **One signature gesture.** A single Najdi-inspired geometric divider used between major sections. No second motif. No second accent color. No second display font.
 
 ## Accessibility & Inclusion
