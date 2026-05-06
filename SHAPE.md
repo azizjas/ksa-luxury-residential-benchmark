@@ -1,94 +1,93 @@
-# Shape — Luxury Residential Ad Benchmark, v5 (brand-first)
+# Shape — Luxury Residential Ad Benchmark, v6 (12-month broad sweep)
 
 ## 1. Feature Summary
 
-A single-page competitive-intelligence brief covering Saudi luxury residential paid social, restructured **brand-first**. Each master plan groups its brands; each brand expands into its residences and verified ad creatives. Silent brands — those without detectable Meta presence — are listed at the bottom of each master plan, because absence is signal.
+A single-page competitive-intelligence brief covering Saudi luxury residential paid social over the **last twelve months**. The methodology shifts from keyword-search-by-residence to **broad advertiser-page sweep**: every Diriyah-relevant Meta page is scrolled exhaustively, every ad in the 12-month window captured, then each ad bucketed manually to the residence(s) it promotes (text + image + landing-page URL signals). Prismax ads are excluded. Silent residences and silent brands are dropped — only what has ads is shown.
 
 ## 2. Primary User Action
 
-A reader scans the brand-grouped matrix in 30 seconds — "How is Aman doing in KSA?" → one row across all master plans. Then they drill into a master plan section to see the brands that anchor it. Inside each brand, residences expand, then ads, then variants in scroll-snap carousels with click-to-enlarge lightbox.
+A reader scans the brand-grouped matrix in 30 seconds — "How is Aman doing in KSA?" → one row across master plans. Then they drill into a master plan section, into a brand, into a residence, into ad creatives. Empty rows/sections do not exist; their absence is itself the signal.
 
-## 3. Why v5 (structural shift)
+## 3. Why v6 (methodology shift)
 
-v4 read like a residence inventory. v5 reads like a brand audit:
+v5 read like an audit of named residences. v6 reads like a market census. Two changes:
 
-- Top level under each master plan = **brand bucket**, not residence.
-- A brand can be: hospitality operator (Aman, Armani, Miraval...), starchitect / fashion-house lifestyle brand (Elie Saab), standalone luxury project brand (Nammos), broker brand (Christie's), architecture firm (Dar Al Omran), or developer brand where no operator anchors (DarGlobal Rayana, Diriyah Company own creative).
-- Each brand carries its residences as nested sub-sections (DarGlobal → Amara at Rayana + Rayana Mansions; Elie Saab → Sedra Branded Villas + Etoile by Elie Saab).
-- Silent brands appear in their own strip at the bottom of each master plan with one-line absence notes.
-- Matrix rows = brands grouped by master plan, with a signal column (loud / quiet / silent) so the reader can scan competitive density at a glance.
-- All v2 / v3 / v4 delta framing is stripped. Numbers stand on their own. The compile date appears as "Compiled 2026-05-06", not as a version marker.
+- **Period extends to 12 months** (since 2025-05-06). Prior versions were 6 months.
+- **Broad advertiser-page sweep, not keyword search.** Keyword search misses ads where the residence name lives only in the image. v6 scrolls every Diriyah-relevant page (developers, architecture firms, brokerages, marketplaces, hospitality operators) end-to-end and buckets each ad by image + copy + landing URL. Result: residences Aziz knew were running ads but were missing from v5 are now caught.
+
+**Consequences:**
+- No more "silent brands" or "silent residences" sections. Empty buckets are dropped silently.
+- Prismax (page_id 259143187971) excluded entirely.
+- Brand sub-sections survive only if at least one residence under them has at least one ad.
+- The matrix now sorts by ad volume; brands with zero ads are absent.
 
 ## 4. Design Direction
 
-**Color strategy:** unchanged — restrained warm-dark palette, single champagne-gold accent, OKLCH tokens. Silent brands desaturate to ink-mute / ink-veryfaint to visually quiet them.
+**Color strategy:** unchanged — restrained warm-dark palette, single champagne-gold accent, OKLCH tokens.
 
-**Theme scene sentence:** A Diriyah Marketing Director scans this on a 27-inch monitor at dusk, brand by brand. The page should feel like a Bloomberg terminal page typeset by Wallpaper — restrained, dense, every number earned, every variant visible.
+**Theme scene sentence:** A Diriyah Marketing Director scans this on a 27-inch monitor at dusk, brand by brand. Bloomberg terminal page typeset by Wallpaper. Restrained, dense, every number earned, every variant visible.
 
 **Anchor references:**
-- *FT Markets data pages* for tabular density and tabular-numeral discipline.
+- *FT Markets data pages* for tabular density.
 - *Bloomberg Terminal* for stat-grid economy.
 - *Apple Newsroom press kits* for the gallery feel of variant carousels.
-- *NB Studio / Pentagram editorial print* for the shift between dense data zones and breathing typographic markers.
+- *NB Studio / Pentagram editorial print* for the breathing typographic markers.
 
-**Anti-references reinforced:** No narrative paragraphs. No version-delta framing. No SaaS gradient hero metrics. No glassmorphism. No Looker tile grids. No category-reflex aesthetics.
+**Anti-references:** no narrative paragraphs, no version-delta framing, no SaaS gradient hero metrics, no glassmorphism, no Looker tile grids, no category-reflex aesthetics, no "v6" markers in body content.
 
 ## 5. Scope
 
 - **Fidelity:** Production-ready.
-- **Breadth:** One page; hero, brand-grouped matrix, seven master-plan sections (each containing brand sub-sections + silent-brands strip), five takeaways, methodology footnote.
+- **Breadth:** One page; hero, advertiser-sweep matrix, master-plan sections (only those with hits), brand sub-sections (only those with hits), residence sub-sections (only those with hits), takeaways, methodology footnote.
 - **Interactivity:** Carousel scroll-snap on every ad; click-to-enlarge lightbox; Esc / click-outside close.
 - **Time intent:** Polished until it ships.
 
-## 6. Layout Strategy — brand-first redesign
+## 6. Layout Strategy — broad-sweep edition
 
 ### Hero
-Editorial. Big DM Serif headline ("Bundle the brands. Then break down the residences."), eyebrow above, one short deck paragraph. Below: 6-stat at-a-glance row (brands inventoried, active, silent, ads captured, variant images, compile date).
+Editorial. Big DM Serif headline. Eyebrow above. One short deck paragraph that names the methodology shift in one breath. Below: 6-stat at-a-glance row (advertisers swept, advertisers active, residences with ads, ads captured, variant images, compile date).
 
-### Brand-grouped matrix
-Centerpiece. Rows = brands grouped by master plan; sorted within each master plan as loud → quiet → silent. Columns = master plan, brand (with kind subline), residences under brand, ads, active, variants, who's pushing in SA, signal pill. Silent rows desaturate.
+### Advertiser sweep matrix
+Centerpiece. Rows = advertisers, sorted by ad volume in the 12-month window. Columns = page name, kind (developer / broker / operator / etc.), ads, active ads, residences they advertised, variants. No silent rows.
 
-### Master-plan sections (seven of them)
-Each opens with eyebrow, single-line H2, one short blurb, four-stat strip (active brands, silent, ads, variants). Then per-brand sub-sections, then silent-brands strip.
+### Master-plan sections
+Only master plans with at least one bucketed ad. Each opens with eyebrow, single H2, one short blurb, four-stat strip (brands with ads, residences with ads, ads, variants). Then per-brand sub-sections.
 
 ### Brand sub-section
-- H3 brand name + kind eyebrow (operator / lifestyle / developer / broker / etc.) + signal label.
-- Brand blurb (one paragraph, max 60 words).
-- 5-stat tile row (ads, active, variants, residences, advertisers).
-- "Library scope" line.
-- Indented (left-rule) brand-body containing residence sub-sections.
+- H3 brand name + kind eyebrow + ad count.
+- Brand blurb (max 60 words, sourced from operator/developer factsheet).
+- 4-stat tile row (ads, active, variants, residences).
+- "Library scope" line — which advertisers actually ran the ads.
+- Indented brand-body containing residence sub-sections.
 
-### Residence sub-section (nested inside brand)
+### Residence sub-section
 - H4 residence name + blurb.
 - 3-stat tile row (verified ads, active, variants).
-- For each ad: metadata strip (advertiser, status, tag, date, platforms, variant indicator, library-id link), then horizontal scroll-snap carousel of variant images with `1/N` captions.
+- For each ad: metadata strip (advertiser, status, date range, platforms, variant count, library-id link), then horizontal scroll-snap carousel of variant images with `1/N` captions.
 - 3-5 facts at the bottom of each residence.
 
-### Silent-brands strip
-Lives at the bottom of every master plan. Three columns: brand name, kind, one-line absence note. Visually quiet (dashed top rule, dimmed type).
-
 ### Carousel & lightbox
-Unchanged from v4 — CSS scroll-snap horizontal strip, vanilla JS lightbox.
+Unchanged from v5 — CSS scroll-snap horizontal strip, vanilla JS lightbox.
 
 ### Five takeaways
-Five numbered items, max 15 words each. Lead with the brand-counts insight.
+Five numbered items, max 15 words each. Lead with the methodology insight ("broad sweep surfaces N residences that keyword search missed").
 
 ### Methodology
-`<details>` collapsible. Source rules, brand-bucket definition, scope, disclosed limitations.
+`<details>` collapsible. Sources, sweep procedure, bucketing rules, scope, disclosed limitations, Prismax exclusion note.
 
 ## 7. Data plane
 
-`/tmp/lux_v4/_residence_search_results.json` — per-residence Meta Ad Library banner counts.
-`/tmp/lux_v4/_variants.json` — per-LID detail-page scrape with explicit version count.
-`/tmp/lux_shots/*.png` — variant images on disk.
-The build script (`/tmp/build_lux_v5.py`) embeds verified-only ads into a single self-contained HTML, base64-encoding all variant images. Brand metadata is hard-coded in the script's `BRANDS` list, mapping each brand to its master plan, kind, signal level, library scope, advertisers, and nested residences.
+- `/tmp/lux_v6/sweep_<page>.json` — per-advertiser sweep results (every ad card scraped).
+- `/tmp/lux_v6/_buckets.json` — bucketed result, per residence.
+- `/tmp/lux_v4_shots/`, `/tmp/lux_v6_shots/` — variant images on disk.
+- `/tmp/build_lux_v6.py` — embeds verified-only ads into a single self-contained HTML, base64-encoding all variant images. Brand and residence metadata is hard-coded; only buckets with non-empty ad lists render.
 
 ## 8. Key States
 
 - **Default:** As described.
 - **Print:** Warm cream + dark ink. Carousel becomes a wrap-flex grid. Page-break before each master plan section.
 - **Reduced motion:** Hover scale + lightbox fade disabled.
-- **Mobile (390px):** Stat tiles re-flow to 3-up. Carousel items span 78vw. Matrix horizontally scrollable. Silent-row collapses to single column.
+- **Mobile (390px):** Stat tiles re-flow. Carousel items span 78vw. Matrix horizontally scrollable.
 
 ## 9. Interaction Model
 
