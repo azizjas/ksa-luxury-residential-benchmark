@@ -1,100 +1,88 @@
-# Shape — Luxury Residential Ad Benchmark, v6 (12-month broad sweep)
+# Shape — Luxury Residential Ad Benchmark, latest
 
 ## 1. Feature Summary
 
-A single-page competitive-intelligence brief covering Saudi luxury residential paid social over the **last twelve months**. The methodology shifts from keyword-search-by-residence to **broad advertiser-page sweep**: every Diriyah-relevant Meta page is scrolled exhaustively, every ad in the 12-month window captured, then each ad bucketed manually to the residence(s) it promotes (text + image + landing-page URL signals). Prismax ads are excluded. Silent residences and silent brands are dropped — only what has ads is shown.
+A single-page competitive-intelligence brief covering Saudi luxury residential paid Meta over the **last twelve months**. The shift from prior iterations: a **sites-driven ownership classification** built directly from diriyahcompany.sa/en/diriyah-living and wadisafar.com/en/hotels.
+
+- Anything listed on those two URLs = Diriyah-owned.
+- Anything else advertising in Diriyah territory = competitor.
+- ROSHN (Sedra) and Red Sea Global (The Red Sea, AMAALA) are tracked as separate competitor master plans.
+
+Methodology: every Diriyah-relevant Meta page is scrolled exhaustively, every ad in the 12-month window captured, then each ad bucketed manually to its residence (text + image + landing-page URL signals). Adjacent-card text bleed is stripped before keyword scanning so a M.A.D. Muscat creative on the DarGlobal page does not falsely match Trump Mansions copy from the next card. Prismax ads are excluded entirely. Empty residences are dropped from the body but listed in an audit-trail block in the methodology footer.
 
 ## 2. Primary User Action
 
-A reader scans the brand-grouped matrix in 30 seconds — "How is Aman doing in KSA?" → one row across master plans. Then they drill into a master plan section, into a brand, into a residence, into ad creatives. Empty rows/sections do not exist; their absence is itself the signal.
+A reader scans the matrix in 30 seconds, sees a camp pill against every advertiser ("Diriyah-owned" / "Competitor" / "ROSHN" / "Red Sea Global" / "Mixed"), then drills into the section that matters. Empty rows do not exist. Audit-trail line tells them which canonical Diriyah residences ran zero paid Meta in window.
 
-## 3. Why v6 (methodology shift)
+## 3. Sections (in order)
 
-v5 read like an audit of named residences. v6 reads like a market census. Two changes:
-
-- **Period extends to 12 months** (since 2025-05-06). Prior versions were 6 months.
-- **Broad advertiser-page sweep, not keyword search.** Keyword search misses ads where the residence name lives only in the image. v6 scrolls every Diriyah-relevant page (developers, architecture firms, brokerages, marketplaces, hospitality operators) end-to-end and buckets each ad by image + copy + landing URL. Result: residences Aziz knew were running ads but were missing from v5 are now caught.
-
-**Consequences:**
-- No more "silent brands" or "silent residences" sections. Empty buckets are dropped silently.
-- Prismax (page_id 259143187971) excluded entirely.
-- Brand sub-sections survive only if at least one residence under them has at least one ad.
-- The matrix now sorts by ad volume; brands with zero ads are absent.
+1. **Hero.** Headline question. Six at-a-glance stats. Compile date.
+2. **Advertiser sweep.** Matrix sorted by volume, with a Camp column tagged with a small-caps pill.
+3. **Diriyah master plan (Diriyah-owned).** Per diriyahcompany.sa: 8 residential lines. Render those with ads only.
+4. **Wadi Safar (Diriyah-owned).** Per wadisafar.com: 6 brands. Render those with ads only.
+5. **Competitors advertising in Diriyah territory.** Sub-grouped:
+   - Rayana product line (DarGlobal).
+   - Trump line (Dar Al Arkan + Dar Global + Trump Organization).
+   - Other third parties (brokerages, architects).
+6. **Sedra (ROSHN).**
+7. **The Red Sea (RSG).**
+8. **AMAALA (RSG).**
+9. **Five takeaways.**
+10. **Methodology** (collapsible). Audit trail block.
 
 ## 4. Design Direction
 
-**Color strategy:** unchanged — restrained warm-dark palette, single champagne-gold accent, OKLCH tokens.
+**Color strategy:** unchanged — restrained warm-dark palette, single champagne-gold accent, OKLCH tokens. New: camp pills in semantic colors (gold = Diriyah, terracotta = competitor, neutral = ROSHN, cyan = RSG, mute = Mixed).
 
-**Theme scene sentence:** A Diriyah Marketing Director scans this on a 27-inch monitor at dusk, brand by brand. Bloomberg terminal page typeset by Wallpaper. Restrained, dense, every number earned, every variant visible.
+**Theme scene sentence:** A Diriyah Marketing Director scans this on a 27-inch monitor at dusk. Bloomberg terminal page typeset by Wallpaper. Restrained, dense, every number earned. The camp pill is the new piece of design furniture, sitting on every matrix row, telling the reader who owns the residence behind that ad in one glance.
 
 **Anchor references:**
 - *FT Markets data pages* for tabular density.
 - *Bloomberg Terminal* for stat-grid economy.
-- *Apple Newsroom press kits* for the gallery feel of variant carousels.
-- *NB Studio / Pentagram editorial print* for the breathing typographic markers.
+- *NB Studio / Pentagram editorial print* for breathing typographic markers.
 
-**Anti-references:** no narrative paragraphs, no version-delta framing, no SaaS gradient hero metrics, no glassmorphism, no Looker tile grids, no category-reflex aesthetics, no "v6" markers in body content.
+**Anti-references:** no SaaS gradient hero metrics, no glassmorphism, no Looker tile grids, no version markers in body content, no narrative paragraphs beyond the hero deck.
 
-## 5. Scope
+## 5. Type ladder
 
-- **Fidelity:** Production-ready.
-- **Breadth:** One page; hero, advertiser-sweep matrix, master-plan sections (only those with hits), brand sub-sections (only those with hits), residence sub-sections (only those with hits), takeaways, methodology footnote.
-- **Interactivity:** Carousel scroll-snap on every ad; click-to-enlarge lightbox; Esc / click-outside close.
-- **Time intent:** Polished until it ships.
+Five distinct steps, each ≥1.25× the next. No flat-hierarchy detector flag.
 
-## 6. Layout Strategy — broad-sweep edition
+- 12px — meta, captions, eyebrow labels.
+- 16px — body, blurbs, table cells.
+- 19px — residence titles, advertiser names in ad cards.
+- 26px — sub-section titles, residence stat numbers.
+- 36px — section H2s.
+- 96px (clamp) — H1 hero.
 
-### Hero
-Editorial. Big DM Serif headline. Eyebrow above. One short deck paragraph that names the methodology shift in one breath. Below: 6-stat at-a-glance row (advertisers swept, advertisers active, residences with ads, ads captured, variant images, compile date).
+## 6. Heading hierarchy
 
-### Advertiser sweep matrix
-Centerpiece. Rows = advertisers, sorted by ad volume in the 12-month window. Columns = page name, kind (developer / broker / operator / etc.), ads, active ads, residences they advertised, variants. No silent rows.
+- H1 = hero only.
+- H2 = each top-level section (Diriyah master plan, Wadi Safar, Competitors, Sedra, The Red Sea, AMAALA, Five takeaways, Methodology, At-a-glance).
+- H3 = either residence title (in non-grouped sections) OR sub-section title (in Competitors).
+- H4 = residence title inside a sub-section (Competitors only).
 
-### Master-plan sections
-Only master plans with at least one bucketed ad. Each opens with eyebrow, single H2, one short blurb, four-stat strip (brands with ads, residences with ads, ads, variants). Then per-brand sub-sections.
+No skipped heading levels.
 
-### Brand sub-section
-- H3 brand name + kind eyebrow + ad count.
-- Brand blurb (max 60 words, sourced from operator/developer factsheet).
-- 4-stat tile row (ads, active, variants, residences).
-- "Library scope" line — which advertisers actually ran the ads.
-- Indented brand-body containing residence sub-sections.
+## 7. Bucketing rules
 
-### Residence sub-section
-- H4 residence name + blurb.
-- 3-stat tile row (verified ads, active, variants).
-- For each ad: metadata strip (advertiser, status, date range, platforms, variant count, library-id link), then horizontal scroll-snap carousel of variant images with `1/N` captions.
-- 3-5 facts at the bottom of each residence.
+- Each ad's body is cleaned to its own card text only (strip everything from the next "Library ID:" line onwards; if own LID isn't in the body, take the pre-first-LID slice).
+- Body matching uses ONLY the cleaned own-card body. Never `full_text` (the whole page transcript leaks keywords across ads).
+- An ad can be attributed to multiple residences if its creative markets a portfolio.
+- Generic-precedence: when both a line generic (rayana-generic) and a master-plan generic (wadi-safar-generic, diriyah-generic) match, keep only the line generic. Avoids triple-counting the same ad in three buckets.
 
-### Carousel & lightbox
-Unchanged from v5 — CSS scroll-snap horizontal strip, vanilla JS lightbox.
+## 8. Data plane
 
-### Five takeaways
-Five numbered items, max 15 words each. Lead with the methodology insight ("broad sweep surfaces N residences that keyword search missed").
+- `/tmp/lux_v6/sweep_<page>.json` + `/tmp/lux_v7/sweep_<page>.json` — per-advertiser sweep results.
+- `/tmp/lux_v7/_buckets.json` — bucketed result, per residence, with owner_camp tag.
+- `/tmp/lux_v6_shots/` — variant images on disk.
+- `/tmp/build_lux_v7.py` — embeds verified-only ads into a single self-contained HTML, base64-encoding all variant images.
 
-### Methodology
-`<details>` collapsible. Sources, sweep procedure, bucketing rules, scope, disclosed limitations, Prismax exclusion note.
+## 9. Key states
 
-## 7. Data plane
-
-- `/tmp/lux_v6/sweep_<page>.json` — per-advertiser sweep results (every ad card scraped).
-- `/tmp/lux_v6/_buckets.json` — bucketed result, per residence.
-- `/tmp/lux_v4_shots/`, `/tmp/lux_v6_shots/` — variant images on disk.
-- `/tmp/build_lux_v6.py` — embeds verified-only ads into a single self-contained HTML, base64-encoding all variant images. Brand and residence metadata is hard-coded; only buckets with non-empty ad lists render.
-
-## 8. Key States
-
-- **Default:** As described.
-- **Print:** Warm cream + dark ink. Carousel becomes a wrap-flex grid. Page-break before each master plan section.
-- **Reduced motion:** Hover scale + lightbox fade disabled.
-- **Mobile (390px):** Stat tiles re-flow. Carousel items span 78vw. Matrix horizontally scrollable.
-
-## 9. Interaction Model
-
-- **Scroll-snap carousel.** `scroll-snap-type: x mandatory` on the strip, `scroll-snap-align: center` on each item.
-- **Click to enlarge.** Each variant is a button; click opens the lightbox with full-res image.
-- **Lightbox close.** Esc, click-outside, or Close button.
-- **Reduced motion.** Transitions drop to 0ms.
+- **Default.** As described.
+- **Print.** Warm cream + dark ink. Carousel becomes a wrap-flex grid.
+- **Reduced motion.** Hover scale + lightbox fade disabled.
+- **Mobile (390px).** Stat tiles re-flow. Carousel items span 78vw. Matrix horizontally scrollable.
 
 ## 10. Confirmation
 
